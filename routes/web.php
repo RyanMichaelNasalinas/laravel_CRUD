@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('student','StudentController');
+
+Route::post('/student/{$id}','StudentController@store');
+Route::post('/student/{$student}','StudentController@update');
+
+Route::delete('/student/{$id}',"StudentController@destroy");

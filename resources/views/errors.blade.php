@@ -1,5 +1,6 @@
  {{-- Check errors --}}
-       <div class="row">
+    @if($errors->any())   
+    <div class="row">
            <div class="col-md-12">
                  {{-- Check errors --}}
             @if(count($errors) > 0)
@@ -17,3 +18,4 @@
    
            </div>
         </div>
+    @endif

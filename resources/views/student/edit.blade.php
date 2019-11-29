@@ -7,9 +7,9 @@
             <a href="/student" class="mb-3 d-flex float-right">back</a>     
             <h3 class="text-center mb-3">Edit Record</h3>
                 
-            <form method="post" action="{{ action('StudentController@update',$id) }}">
-                @csrf
+        <form method="post" action="/student/{{ $student->id }}">
                 @method('PATCH')
+                   @csrf
                 
                 <div class="form-group">
                     <input type="text" name="first_name" 

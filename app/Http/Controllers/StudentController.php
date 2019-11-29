@@ -40,8 +40,8 @@ class StudentController extends Controller
     {
         //
         $this->validate($request, [ 
-            'first_name' => 'required',
-            'last_name' => 'required'
+            'first_name' => ['required','min:3'],
+            'last_name' => ['required','min:3']
         ]);
 
         $student = new Student([
@@ -89,8 +89,8 @@ class StudentController extends Controller
     {
         //
         $this->validate($request,[
-            'first_name' => 'required',
-            'last_name' => 'required'
+            'first_name' => ['required','min:3'],
+            'last_name' => ['required','min:3']
         ]);
         
         $student = Student::find($id);
@@ -114,4 +114,5 @@ class StudentController extends Controller
         $student->delete();
         return redirect('student')->with('success','Data Successfully Deleted');
     }
+
 }

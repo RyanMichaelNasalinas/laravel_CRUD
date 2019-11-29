@@ -9,10 +9,10 @@
             <form method="post" action="{{ url('student') }}">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="first_name" id="" class="form-control" placeholder="First Name">
+                <input type="text" name="first_name" id="" class="form-control" placeholder="First Name" value="{{ old('first_name') }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="last_name" id="" class="form-control" placeholder="Last Name">
+                <input type="text" name="last_name" id="" class="form-control" placeholder="Last Name" value="{{ old('last_name') }}">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Add New" class="btn btn-primary">
@@ -21,6 +21,6 @@
         </div>
     </div>
 
-  @include('errors');
+  @include('errors')
 
 @endsection

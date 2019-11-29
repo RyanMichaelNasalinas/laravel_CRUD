@@ -7,7 +7,7 @@
             <h3 class="text-center">Students Data</h3>
             <a href="/student/create" class="float-right mb-2 btn btn-success">Add New Record</a>
         </div>
-
+        
          <div class="col-md-12">
                {{-- Display Success Message --}}
             @if($message = Session::get('success'))
@@ -34,10 +34,10 @@
                         <td>{{ $row['first_name'] }}</td>
                         <td>{{ $row['last_name'] }}</td>
                         <td>
-                            <a href="{{ action('StudentController@edit',$row['id']) }}" class="btn btn-primary">Edit</a>
+                            <a href="/student/{{ $row['id'] }}/edit" class="btn btn-primary">Edit</a>
                         </td>
                          <td>
-                            <form action="{{ action('StudentController@destroy',$row['id']) }}" class="delete_form" method="post">
+                            <form action="/student/{{ $row['id'] }}" class="delete_form" method="post">
                                  @csrf
                                  @method('DELETE')
 
